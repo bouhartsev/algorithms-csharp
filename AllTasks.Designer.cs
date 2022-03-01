@@ -1,7 +1,7 @@
 ﻿
-namespace AllTasks
+namespace Algorithms
 {
-    partial class Form1
+    partial class AllTasks
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@ namespace AllTasks
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTasks));
+            this.lblSplash = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblSourceCode = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblName = new System.Windows.Forms.ToolStripStatusLabel();
@@ -39,11 +41,22 @@ namespace AllTasks
             this.task3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.task4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.task5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblSplash = new System.Windows.Forms.Label();
             this.btnTaskExit = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblSplash
+            // 
+            this.lblSplash.BackColor = System.Drawing.Color.Black;
+            this.lblSplash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSplash.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSplash.Location = new System.Drawing.Point(0, 30);
+            this.lblSplash.Name = "lblSplash";
+            this.lblSplash.Size = new System.Drawing.Size(709, 620);
+            this.lblSplash.TabIndex = 10;
+            this.lblSplash.Text = "CHOOSE THE TASK";
+            this.lblSplash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // statusStrip
             // 
@@ -53,13 +66,13 @@ namespace AllTasks
             this.lblSourceCode,
             this.lblName,
             this.lblCopyright});
-            this.statusStrip.Location = new System.Drawing.Point(0, 728);
+            this.statusStrip.Location = new System.Drawing.Point(0, 650);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.statusStrip.ShowItemToolTips = true;
-            this.statusStrip.Size = new System.Drawing.Size(760, 26);
+            this.statusStrip.Size = new System.Drawing.Size(709, 26);
             this.statusStrip.SizingGrip = false;
-            this.statusStrip.TabIndex = 4;
+            this.statusStrip.TabIndex = 8;
             this.statusStrip.Text = "Footer";
             // 
             // lblSourceCode
@@ -107,8 +120,8 @@ namespace AllTasks
             this.task5ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(760, 30);
-            this.menuStrip.TabIndex = 4;
+            this.menuStrip.Size = new System.Drawing.Size(709, 30);
+            this.menuStrip.TabIndex = 9;
             this.menuStrip.Text = "menuStrip";
             // 
             // task1ToolStripMenuItem
@@ -150,51 +163,38 @@ namespace AllTasks
             this.task5ToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
             this.task5ToolStripMenuItem.Text = "Task 5";
             // 
-            // lblSplash
-            // 
-            this.lblSplash.BackColor = System.Drawing.Color.Black;
-            this.lblSplash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSplash.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSplash.Location = new System.Drawing.Point(0, 30);
-            this.lblSplash.Name = "lblSplash";
-            this.lblSplash.Size = new System.Drawing.Size(760, 698);
-            this.lblSplash.TabIndex = 6;
-            this.lblSplash.Text = "CHOOSE THE TASK";
-            this.lblSplash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnTaskExit
             // 
             this.btnTaskExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnTaskExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTaskExit.Location = new System.Drawing.Point(5, 34);
+            this.btnTaskExit.Location = new System.Drawing.Point(12, 47);
             this.btnTaskExit.Name = "btnTaskExit";
             this.btnTaskExit.Size = new System.Drawing.Size(78, 27);
-            this.btnTaskExit.TabIndex = 7;
+            this.btnTaskExit.TabIndex = 11;
             this.btnTaskExit.Text = "exit task";
             this.btnTaskExit.UseVisualStyleBackColor = true;
             this.btnTaskExit.Visible = false;
             this.btnTaskExit.Click += new System.EventHandler(this.btnTaskExit_Click);
             // 
-            // Form1
+            // AllTasks
             // 
-            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnTaskExit;
-            this.ClientSize = new System.Drawing.Size(760, 754);
+            this.ClientSize = new System.Drawing.Size(709, 676);
             this.Controls.Add(this.btnTaskExit);
             this.Controls.Add(this.lblSplash);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "Form1";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "AllTasks";
             this.Text = "Bouhartsev";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.AllTasks_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
@@ -205,17 +205,18 @@ namespace AllTasks
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblSplash;
         private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel lblSourceCode;
         private System.Windows.Forms.ToolStripStatusLabel lblName;
+        private System.Windows.Forms.ToolStripStatusLabel lblCopyright;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem task1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem task2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem task3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem task4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem task5ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripStatusLabel lblCopyright;
-        private System.Windows.Forms.ToolStripStatusLabel lblSourceCode;
-        private System.Windows.Forms.Label lblSplash;
         private System.Windows.Forms.Button btnTaskExit;
     }
 }

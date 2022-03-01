@@ -8,31 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Task1
+namespace Algorithms
 {
-    public partial class Form1 : Form
+    public partial class Task1 : Form
     {
-        public Form1()
+        public Task1()
         {
             InitializeComponent();
         }
-
-        List<int> array;
+        List<int> array = new List<int>();
         bool sorted = false;
 
         private void printArray()
         {
             listView.Clear();
-            if (array?.Count>0)
+            if (array?.Count > 0)
             {
                 //this.lblList.Text = String.Join("\n", array.Select((x, ind) => ind + ": " + x)); // for label
-                string temp="";
+                string temp = "";
                 listView.Items.AddRange(array.Select((x, ind) => {
                     temp = ind + ":   ";
                     if (ind / 10 == 0) temp += "  ";
                     temp += x;
                     return new ListViewItem(temp);
-                    }).ToArray());
+                }).ToArray());
 
                 if (!gbSearch.Enabled)
                 {
@@ -44,7 +43,7 @@ namespace Task1
                 else gbInsert.Enabled = true;
 
                 inpInsertIndex.Maximum = array.Count;
-                inpDeleteIndex.Maximum = array.Count-1;
+                inpDeleteIndex.Maximum = array.Count - 1;
             }
             else
             {
@@ -53,11 +52,6 @@ namespace Task1
                 gbInsert.Enabled = true;
                 inpInsertIndex.Maximum = 0;
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCreateArray_Click(object sender, EventArgs e)
@@ -93,10 +87,10 @@ namespace Task1
             if (!sorted)
             {
                 ind = array.FindIndex(x => x == toFind);
-                while(ind>=0)
+                while (ind >= 0)
                 {
                     result.Add(ind);
-                    ind = array.FindIndex(ind+1, x => x == toFind);
+                    ind = array.FindIndex(ind + 1, x => x == toFind);
                 }
             }
             else
@@ -110,7 +104,7 @@ namespace Task1
                 }
             }
 
-            for (int i=0; i<result.Count; i++) listView.Items[result[i]].Selected = true;
+            for (int i = 0; i < result.Count; i++) listView.Items[result[i]].Selected = true;
         }
 
         private void btnInsert_Click(object sender, EventArgs e)

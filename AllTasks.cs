@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace AllTasks
+namespace Algorithms
 {
-    public partial class Form1 : Form
+    public partial class AllTasks : Form
     {
         Form[] tasks;
         int current_task = -1;
 
-        public Form1()
+        public AllTasks()
         {
             InitializeComponent();
         }
@@ -24,6 +24,7 @@ namespace AllTasks
         private void ShowTask(Form task)
         {
             task.Show();
+
             this.Width++; // костыль
             this.Width--;
         }
@@ -47,11 +48,11 @@ namespace AllTasks
             return task;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void AllTasks_Load(object sender, EventArgs e)
         {
             int len = this.menuStrip.Items.Count;
             tasks = new Form[len];
-            for (int i=0; i<len; i++)
+            for (int i = 0; i < len; i++)
             {
                 if (this.menuStrip.Items[i].Enabled) this.menuStrip.Items[i].Click += new System.EventHandler(this.menuItem_Click);
             }
@@ -62,11 +63,11 @@ namespace AllTasks
             lblSplash.Visible = false;
             btnTaskExit.Visible = true;
 
-            int i = Convert.ToInt32((sender as ToolStripItem).Text.Split(' ')[1])-1; // У КНОПОК ДОЛЖНЫ БЫТЬ ИМЕНА "Task 1" и т.п.
+            int i = Convert.ToInt32((sender as ToolStripItem).Text.Split(' ')[1]) - 1; // У КНОПОК ДОЛЖНЫ БЫТЬ ИМЕНА "Task 1" и т.п.
             if (tasks[i] != null) ShowTask(tasks[i]);
             else
             {
-                if (i==0) tasks[i] = CreateTask<Task1.Form1>();
+                if (i == 0) tasks[i] = CreateTask<Task1>();
                 //else if (i == 1)
             }
             current_task = i;
