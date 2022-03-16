@@ -42,8 +42,12 @@ namespace Algorithms
             this.task4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.task5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTaskExit = new System.Windows.Forms.Button();
+            this.lblRuntime = new System.Windows.Forms.Label();
+            this.pnlRuntime = new System.Windows.Forms.Panel();
+            this.lblRuntimeTitle = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.pnlRuntime.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSplash
@@ -51,9 +55,9 @@ namespace Algorithms
             this.lblSplash.BackColor = System.Drawing.Color.Black;
             this.lblSplash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSplash.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSplash.Location = new System.Drawing.Point(0, 30);
+            this.lblSplash.Location = new System.Drawing.Point(0, 28);
             this.lblSplash.Name = "lblSplash";
-            this.lblSplash.Size = new System.Drawing.Size(709, 620);
+            this.lblSplash.Size = new System.Drawing.Size(709, 622);
             this.lblSplash.TabIndex = 10;
             this.lblSplash.Text = "CHOOSE THE TASK";
             this.lblSplash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,7 +124,7 @@ namespace Algorithms
             this.task5ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(709, 30);
+            this.menuStrip.Size = new System.Drawing.Size(709, 28);
             this.menuStrip.TabIndex = 9;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -128,7 +132,7 @@ namespace Algorithms
             // 
             this.task1ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.task1ToolStripMenuItem.Name = "task1ToolStripMenuItem";
-            this.task1ToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.task1ToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.task1ToolStripMenuItem.Text = "Task 1";
             // 
             // task2ToolStripMenuItem
@@ -136,7 +140,7 @@ namespace Algorithms
             this.task2ToolStripMenuItem.Enabled = false;
             this.task2ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.task2ToolStripMenuItem.Name = "task2ToolStripMenuItem";
-            this.task2ToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.task2ToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.task2ToolStripMenuItem.Text = "Task 2";
             // 
             // task3ToolStripMenuItem
@@ -144,7 +148,7 @@ namespace Algorithms
             this.task3ToolStripMenuItem.Enabled = false;
             this.task3ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.task3ToolStripMenuItem.Name = "task3ToolStripMenuItem";
-            this.task3ToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.task3ToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.task3ToolStripMenuItem.Text = "Task 3";
             // 
             // task4ToolStripMenuItem
@@ -152,7 +156,7 @@ namespace Algorithms
             this.task4ToolStripMenuItem.Enabled = false;
             this.task4ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.task4ToolStripMenuItem.Name = "task4ToolStripMenuItem";
-            this.task4ToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.task4ToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.task4ToolStripMenuItem.Text = "Task 4";
             // 
             // task5ToolStripMenuItem
@@ -160,21 +164,54 @@ namespace Algorithms
             this.task5ToolStripMenuItem.Enabled = false;
             this.task5ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.task5ToolStripMenuItem.Name = "task5ToolStripMenuItem";
-            this.task5ToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.task5ToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.task5ToolStripMenuItem.Text = "Task 5";
             // 
             // btnTaskExit
             // 
+            this.btnTaskExit.BackColor = System.Drawing.Color.Black;
+            this.btnTaskExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTaskExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnTaskExit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTaskExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaskExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnTaskExit.Location = new System.Drawing.Point(12, 47);
             this.btnTaskExit.Name = "btnTaskExit";
             this.btnTaskExit.Size = new System.Drawing.Size(78, 27);
             this.btnTaskExit.TabIndex = 11;
             this.btnTaskExit.Text = "exit task";
-            this.btnTaskExit.UseVisualStyleBackColor = true;
+            this.btnTaskExit.UseVisualStyleBackColor = false;
             this.btnTaskExit.Visible = false;
             this.btnTaskExit.Click += new System.EventHandler(this.btnTaskExit_Click);
+            // 
+            // lblRuntime
+            // 
+            this.lblRuntime.Location = new System.Drawing.Point(0, 29);
+            this.lblRuntime.Name = "lblRuntime";
+            this.lblRuntime.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblRuntime.Size = new System.Drawing.Size(72, 17);
+            this.lblRuntime.TabIndex = 14;
+            this.lblRuntime.Text = "0.0000";
+            this.lblRuntime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlRuntime
+            // 
+            this.pnlRuntime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlRuntime.Controls.Add(this.lblRuntimeTitle);
+            this.pnlRuntime.Controls.Add(this.lblRuntime);
+            this.pnlRuntime.Location = new System.Drawing.Point(610, 36);
+            this.pnlRuntime.Name = "pnlRuntime";
+            this.pnlRuntime.Size = new System.Drawing.Size(73, 56);
+            this.pnlRuntime.TabIndex = 16;
+            this.pnlRuntime.Visible = false;
+            // 
+            // lblRuntimeTitle
+            // 
+            this.lblRuntimeTitle.Location = new System.Drawing.Point(0, 5);
+            this.lblRuntimeTitle.Name = "lblRuntimeTitle";
+            this.lblRuntimeTitle.Size = new System.Drawing.Size(72, 23);
+            this.lblRuntimeTitle.TabIndex = 15;
+            this.lblRuntimeTitle.Text = "Runtime:";
+            this.lblRuntimeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AllTasks
             // 
@@ -183,6 +220,7 @@ namespace Algorithms
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnTaskExit;
             this.ClientSize = new System.Drawing.Size(709, 676);
+            this.Controls.Add(this.pnlRuntime);
             this.Controls.Add(this.btnTaskExit);
             this.Controls.Add(this.lblSplash);
             this.Controls.Add(this.statusStrip);
@@ -199,6 +237,7 @@ namespace Algorithms
             this.statusStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.pnlRuntime.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +257,9 @@ namespace Algorithms
         private System.Windows.Forms.ToolStripMenuItem task4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem task5ToolStripMenuItem;
         private System.Windows.Forms.Button btnTaskExit;
+        private System.Windows.Forms.Label lblRuntime;
+        private System.Windows.Forms.Panel pnlRuntime;
+        private System.Windows.Forms.Label lblRuntimeTitle;
     }
 }
 

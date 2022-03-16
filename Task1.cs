@@ -15,11 +15,13 @@ namespace Algorithms
         public Task1()
         {
             InitializeComponent();
+            AllTasks.GetSelfAndChildrenRecursive(this).OfType<Button>().ToList().ForEach((b) => { if (b.Name!="btnSearch") b.Click += new EventHandler(this.printArray); });
         }
+
         List<int> array = new List<int>();
         bool sorted = false;
 
-        private void printArray()
+        private void printArray(object sender=null, EventArgs e = null)
         {
             listView.Clear();
             if (array?.Count > 0)
@@ -71,8 +73,6 @@ namespace Algorithms
                 inpInsertIndex.Enabled = false;
             }
             else inpInsertIndex.Enabled = true;
-
-            printArray();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -117,13 +117,11 @@ namespace Algorithms
                 if (ind < 0) ind = ~ind;
                 array.Insert(ind, toInsert);
             }
-            printArray();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             array.RemoveAt(Convert.ToInt32(inpDeleteIndex.Value));
-            printArray();
         }
     }
 }

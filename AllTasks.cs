@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace Algorithms
 {
@@ -16,22 +17,71 @@ namespace Algorithms
         Form[] tasks;
         int current_task = -1;
 
+        Stopwatch runtime = new Stopwatch();
+
         public AllTasks()
         {
             InitializeComponent();
         }
 
+        public void runtimeStart(object sender=null, EventArgs e = null)
+        {
+            runtime.Start();
+            //pnlRuntime.Visible = true;
+        }
+
+        private void runtimeStop(object sender = null, EventArgs e = null)
+        {
+            TimeSpan time = runtime.Elapsed;
+            lblRuntime.Text = String.Format("{0}.{1:000}", time.Seconds, time.Milliseconds);
+            pnlRuntime.Visible = true;
+            runtime.Reset();
+        }
+        public static IEnumerable<Control> GetSelfAndChildrenRecursive(Control parent)
+        {
+            List<Control> controls = new List<Control>();
+
+            foreach (Control child in parent.Controls)
+            {
+                controls.AddRange(GetSelfAndChildrenRecursive(child));
+            }
+
+            controls.Add(parent);
+
+            return controls;
+        }
+
+        private void BindRuntime(Form task)
+        {
+            GetSelfAndChildrenRecursive(task).OfType<Button>().ToList().ForEach((b) => {
+                FieldInfo f1 = typeof(Control).GetField("EventClick",
+                    BindingFlags.Static | BindingFlags.NonPublic);
+                object obj = f1.GetValue(b);
+                PropertyInfo pi = b.GetType().GetProperty("Events",
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+                EventHandlerList list = (EventHandlerList)pi.GetValue(b, null);
+                var temp = list[obj]; // old events
+                list.RemoveHandler(obj, list[obj]);
+
+                b.Click += runtimeStart; // list.AddHandler(obj, new EventHandler(runtimeStart));
+                list.AddHandler(obj, temp);
+                b.Click += runtimeStop; // list.AddHandler(obj, new EventHandler(runtimeStop));
+            });
+        }
+
         private void ShowTask(Form task)
         {
             task.Show();
+            pnlRuntime.Visible = false;
 
-            this.Width++; // костыль
+            this.Width++; // костыль, не работает на fullscreen
             this.Width--;
         }
 
         private void HideTask()
         {
             tasks[current_task].Hide();
+            pnlRuntime.Visible = false;
             current_task = -1;
             lblSplash.Visible = true;
             btnTaskExit.Visible = false;
@@ -40,10 +90,12 @@ namespace Algorithms
         private Form CreateTask<T>() where T : Form, new()
         {
             Form task = new T();
+
             task.MdiParent = this;
             task.ControlBox = false;
             task.WindowState = FormWindowState.Maximized;
             task.FormBorderStyle = FormBorderStyle.None;
+            BindRuntime(task);
             ShowTask(task);
             return task;
         }
