@@ -99,8 +99,15 @@ namespace Algorithms
                 if (ind >= 0)
                 {
                     result.Add(ind);
-                    while (ind < array.Count - 1 && array[++ind] == toFind)
-                        result.Add(ind);
+                    for (int i=1; (ind+i) < array.Count - 1 && array[ind+i] == toFind; i++)
+                    {
+                        result.Add(ind+i);
+                    }
+                    for (int i = -1; (ind + i) >=0 && array[ind + i] == toFind; i--)
+                    {
+                        result.Add(ind + i);
+                    }
+
                 }
             }
 
@@ -121,7 +128,19 @@ namespace Algorithms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            array.RemoveAt(Convert.ToInt32(inpDeleteIndex.Value));
+            if (rbDeleteIndex.Checked) array.RemoveAt(Convert.ToInt32(inpDeleteIndex.Value));
+            else
+            {
+                //var selectedIndexes = listView.SelectedIndices.Cast<int>().ToList();
+                //selectedIndexes.Sort();
+                for (int i = listView.SelectedIndices.Count-1; i >=0 ; i--)
+                    array.RemoveAt(listView.SelectedIndices[i]);
+            }
+        }
+
+        private void rbDeleteIndex_CheckedChanged(object sender, EventArgs e)
+        {
+            inpDeleteIndex.Enabled = rbDeleteIndex.Checked;
         }
     }
 }
