@@ -120,7 +120,8 @@ namespace Algorithms
             else
             {
                 if (i == 0) tasks[i] = CreateTask<Task1>();
-                //else if (i == 1)
+                else if (i == 1) tasks[i] = CreateTask<Task2>();
+                //else if (i == 2)
             }
             current_task = i;
 
