@@ -72,28 +72,29 @@ namespace Algorithms
         private void ShowTask(Form task)
         {
             task.Show();
+            task.Activate();
             pnlRuntime.Visible = false;
-
-            this.Width++; // костыль, не работает на fullscreen
-            this.Width--;
+            lblSplash.Visible = false;
+            btnTaskExit.Visible = true;
+            task.WindowState = FormWindowState.Normal;
+            task.WindowState = FormWindowState.Maximized;
         }
 
         private void HideTask()
         {
             tasks[current_task].Hide();
-            pnlRuntime.Visible = false;
             current_task = -1;
+            pnlRuntime.Visible = false;
             lblSplash.Visible = true;
             btnTaskExit.Visible = false;
         }
 
-        private Form CreateTask<T>() where T : Form, new()
+        private Form CreateTask(Type taskType) // where T : Form, new()
         {
-            Form task = new T();
+            Form task = (Form)Activator.CreateInstance(taskType);
 
             task.MdiParent = this;
             task.ControlBox = false;
-            task.WindowState = FormWindowState.Maximized;
             task.FormBorderStyle = FormBorderStyle.None;
             BindRuntime(task);
             ShowTask(task);
@@ -112,16 +113,12 @@ namespace Algorithms
 
         private void menuItem_Click(object sender, EventArgs e)
         {
-            lblSplash.Visible = false;
-            btnTaskExit.Visible = true;
-
             int i = Convert.ToInt32((sender as ToolStripItem).Text.Split(' ')[1]) - 1; // У КНОПОК ДОЛЖНЫ БЫТЬ ИМЕНА "Task 1" и т.п.
             if (tasks[i] != null) ShowTask(tasks[i]);
             else
             {
-                if (i == 0) tasks[i] = CreateTask<Task1>();
-                else if (i == 1) tasks[i] = CreateTask<Task2>();
-                //else if (i == 2)
+                Type taskType = Type.GetType("Algorithms." + "Task" + (i+1), true);
+                tasks[i] = CreateTask(taskType);
             }
             current_task = i;
 

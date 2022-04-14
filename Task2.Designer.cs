@@ -40,10 +40,10 @@ namespace Algorithms
             this.rbSelection = new System.Windows.Forms.RadioButton();
             this.rbInsertion = new System.Windows.Forms.RadioButton();
             this.gbSort = new System.Windows.Forms.GroupBox();
+            this.rbQuick = new System.Windows.Forms.RadioButton();
+            this.rbMerge = new System.Windows.Forms.RadioButton();
             this.btnSort = new System.Windows.Forms.Button();
             this.lblActions = new System.Windows.Forms.Label();
-            this.rbMerge = new System.Windows.Forms.RadioButton();
-            this.rbQuick = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.inpCreateLength)).BeginInit();
             this.gbCreate.SuspendLayout();
             this.gbSort.SuspendLayout();
@@ -54,9 +54,8 @@ namespace Algorithms
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(490, 49);
+            this.lblTitle.Size = new System.Drawing.Size(653, 60);
             this.lblTitle.TabIndex = 19;
             this.lblTitle.Text = "Sorting";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,10 +64,10 @@ namespace Algorithms
             // 
             this.inpCreateLength.BackColor = System.Drawing.Color.Black;
             this.inpCreateLength.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.inpCreateLength.Location = new System.Drawing.Point(7, 64);
-            this.inpCreateLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inpCreateLength.Location = new System.Drawing.Point(9, 79);
+            this.inpCreateLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inpCreateLength.Maximum = new decimal(new int[] {
-            25,
+            17,
             0,
             0,
             0});
@@ -78,7 +77,7 @@ namespace Algorithms
             0,
             0});
             this.inpCreateLength.Name = "inpCreateLength";
-            this.inpCreateLength.Size = new System.Drawing.Size(62, 20);
+            this.inpCreateLength.Size = new System.Drawing.Size(83, 22);
             this.inpCreateLength.TabIndex = 2;
             this.inpCreateLength.Value = new decimal(new int[] {
             1,
@@ -91,10 +90,10 @@ namespace Algorithms
             this.btnCreateArray.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateArray.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCreateArray.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCreateArray.Location = new System.Drawing.Point(82, 17);
-            this.btnCreateArray.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateArray.Location = new System.Drawing.Point(109, 21);
+            this.btnCreateArray.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateArray.Name = "btnCreateArray";
-            this.btnCreateArray.Size = new System.Drawing.Size(170, 36);
+            this.btnCreateArray.Size = new System.Drawing.Size(227, 44);
             this.btnCreateArray.TabIndex = 0;
             this.btnCreateArray.Text = "Create new array";
             this.btnCreateArray.UseVisualStyleBackColor = true;
@@ -108,11 +107,11 @@ namespace Algorithms
             this.gbCreate.Controls.Add(this.inpCreateLength);
             this.gbCreate.Controls.Add(this.btnCreateArray);
             this.gbCreate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.gbCreate.Location = new System.Drawing.Point(10, 85);
-            this.gbCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbCreate.Location = new System.Drawing.Point(13, 105);
+            this.gbCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbCreate.Name = "gbCreate";
-            this.gbCreate.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbCreate.Size = new System.Drawing.Size(268, 119);
+            this.gbCreate.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbCreate.Size = new System.Drawing.Size(357, 146);
             this.gbCreate.TabIndex = 20;
             this.gbCreate.TabStop = false;
             this.gbCreate.Text = "Array";
@@ -123,21 +122,21 @@ namespace Algorithms
             this.btnBackToArray.Enabled = false;
             this.btnBackToArray.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnBackToArray.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBackToArray.Location = new System.Drawing.Point(82, 64);
-            this.btnBackToArray.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToArray.Location = new System.Drawing.Point(109, 79);
+            this.btnBackToArray.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBackToArray.Name = "btnBackToArray";
-            this.btnBackToArray.Size = new System.Drawing.Size(170, 34);
+            this.btnBackToArray.Size = new System.Drawing.Size(227, 42);
             this.btnBackToArray.TabIndex = 6;
             this.btnBackToArray.Text = "Back to random array";
             this.btnBackToArray.UseVisualStyleBackColor = true;
+            this.btnBackToArray.Click += new System.EventHandler(this.btnBackToArray_Click);
             // 
             // lblLength
             // 
             this.lblLength.AutoSize = true;
-            this.lblLength.Location = new System.Drawing.Point(5, 38);
-            this.lblLength.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLength.Location = new System.Drawing.Point(7, 47);
             this.lblLength.Name = "lblLength";
-            this.lblLength.Size = new System.Drawing.Size(63, 13);
+            this.lblLength.Size = new System.Drawing.Size(85, 17);
             this.lblLength.TabIndex = 5;
             this.lblLength.Text = "Array length";
             // 
@@ -147,11 +146,11 @@ namespace Algorithms
             this.listView.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.listView.HideSelection = false;
             this.listView.LabelWrap = false;
-            this.listView.Location = new System.Drawing.Point(385, 85);
-            this.listView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView.Location = new System.Drawing.Point(513, 105);
+            this.listView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView.Name = "listView";
             this.listView.ShowGroups = false;
-            this.listView.Size = new System.Drawing.Size(92, 271);
+            this.listView.Size = new System.Drawing.Size(121, 333);
             this.listView.TabIndex = 25;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.List;
@@ -159,19 +158,19 @@ namespace Algorithms
             // lblArray
             // 
             this.lblArray.AutoSize = true;
-            this.lblArray.Location = new System.Drawing.Point(411, 60);
-            this.lblArray.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblArray.Location = new System.Drawing.Point(548, 74);
             this.lblArray.Name = "lblArray";
-            this.lblArray.Size = new System.Drawing.Size(44, 13);
+            this.lblArray.Size = new System.Drawing.Size(55, 17);
             this.lblArray.TabIndex = 21;
             this.lblArray.Text = "ARRAY";
             // 
             // rbSelection
             // 
             this.rbSelection.AutoSize = true;
-            this.rbSelection.Location = new System.Drawing.Point(7, 45);
+            this.rbSelection.Location = new System.Drawing.Point(9, 55);
+            this.rbSelection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbSelection.Name = "rbSelection";
-            this.rbSelection.Size = new System.Drawing.Size(89, 17);
+            this.rbSelection.Size = new System.Drawing.Size(115, 21);
             this.rbSelection.TabIndex = 7;
             this.rbSelection.Text = "Selection sort";
             this.rbSelection.UseVisualStyleBackColor = true;
@@ -180,9 +179,10 @@ namespace Algorithms
             // 
             this.rbInsertion.AutoSize = true;
             this.rbInsertion.Checked = true;
-            this.rbInsertion.Location = new System.Drawing.Point(7, 21);
+            this.rbInsertion.Location = new System.Drawing.Point(9, 26);
+            this.rbInsertion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbInsertion.Name = "rbInsertion";
-            this.rbInsertion.Size = new System.Drawing.Size(85, 17);
+            this.rbInsertion.Size = new System.Drawing.Size(111, 21);
             this.rbInsertion.TabIndex = 6;
             this.rbInsertion.TabStop = true;
             this.rbInsertion.Text = "Insertion sort";
@@ -198,64 +198,66 @@ namespace Algorithms
             this.gbSort.Controls.Add(this.btnSort);
             this.gbSort.Enabled = false;
             this.gbSort.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.gbSort.Location = new System.Drawing.Point(10, 226);
-            this.gbSort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSort.Location = new System.Drawing.Point(13, 278);
+            this.gbSort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbSort.Name = "gbSort";
-            this.gbSort.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbSort.Size = new System.Drawing.Size(268, 130);
+            this.gbSort.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbSort.Size = new System.Drawing.Size(357, 160);
             this.gbSort.TabIndex = 23;
             this.gbSort.TabStop = false;
             this.gbSort.Text = "Sorting";
+            // 
+            // rbQuick
+            // 
+            this.rbQuick.AutoSize = true;
+            this.rbQuick.Location = new System.Drawing.Point(9, 112);
+            this.rbQuick.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbQuick.Name = "rbQuick";
+            this.rbQuick.Size = new System.Drawing.Size(89, 21);
+            this.rbQuick.TabIndex = 9;
+            this.rbQuick.Text = "Quicksort";
+            this.rbQuick.UseVisualStyleBackColor = true;
+            // 
+            // rbMerge
+            // 
+            this.rbMerge.AutoSize = true;
+            this.rbMerge.Location = new System.Drawing.Point(9, 84);
+            this.rbMerge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMerge.Name = "rbMerge";
+            this.rbMerge.Size = new System.Drawing.Size(97, 21);
+            this.rbMerge.TabIndex = 8;
+            this.rbMerge.Text = "Merge sort";
+            this.rbMerge.UseVisualStyleBackColor = true;
             // 
             // btnSort
             // 
             this.btnSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSort.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSort.Location = new System.Drawing.Point(139, 21);
-            this.btnSort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSort.Location = new System.Drawing.Point(185, 26);
+            this.btnSort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(113, 87);
+            this.btnSort.Size = new System.Drawing.Size(151, 107);
             this.btnSort.TabIndex = 0;
             this.btnSort.Text = "Sort array";
             this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // lblActions
             // 
             this.lblActions.AutoSize = true;
-            this.lblActions.Location = new System.Drawing.Point(129, 60);
-            this.lblActions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblActions.Location = new System.Drawing.Point(172, 74);
             this.lblActions.Name = "lblActions";
-            this.lblActions.Size = new System.Drawing.Size(54, 13);
+            this.lblActions.Size = new System.Drawing.Size(68, 17);
             this.lblActions.TabIndex = 26;
             this.lblActions.Text = "ACTIONS";
             // 
-            // rbMerge
-            // 
-            this.rbMerge.AutoSize = true;
-            this.rbMerge.Location = new System.Drawing.Point(7, 68);
-            this.rbMerge.Name = "rbMerge";
-            this.rbMerge.Size = new System.Drawing.Size(75, 17);
-            this.rbMerge.TabIndex = 8;
-            this.rbMerge.Text = "Merge sort";
-            this.rbMerge.UseVisualStyleBackColor = true;
-            // 
-            // rbQuick
-            // 
-            this.rbQuick.AutoSize = true;
-            this.rbQuick.Location = new System.Drawing.Point(7, 91);
-            this.rbQuick.Name = "rbQuick";
-            this.rbQuick.Size = new System.Drawing.Size(70, 17);
-            this.rbQuick.TabIndex = 9;
-            this.rbQuick.Text = "Quicksort";
-            this.rbQuick.UseVisualStyleBackColor = true;
-            // 
             // Task2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(490, 373);
+            this.ClientSize = new System.Drawing.Size(653, 459);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbCreate);
             this.Controls.Add(this.listView);
@@ -263,7 +265,7 @@ namespace Algorithms
             this.Controls.Add(this.gbSort);
             this.Controls.Add(this.lblActions);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Task2";
             this.Text = "Task 2";
             ((System.ComponentModel.ISupportInitialize)(this.inpCreateLength)).EndInit();
