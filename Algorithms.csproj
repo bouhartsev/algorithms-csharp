@@ -94,6 +94,12 @@
     <Compile Include="AllTasks.Designer.cs">
       <DependentUpon>AllTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Task3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task3.Designer.cs">
+      <DependentUpon>Task3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Task2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Task2.resx">
       <DependentUpon>Task2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task3.resx">
+      <DependentUpon>Task3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Algorithms_1_TemporaryKey.pfx" />
     <None Include="algorithms_ma.snk" />
