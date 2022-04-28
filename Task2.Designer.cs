@@ -168,7 +168,7 @@ namespace Algorithms
             // 
             this.rbSelection.AutoSize = true;
             this.rbSelection.Location = new System.Drawing.Point(9, 55);
-            this.rbSelection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbSelection.Margin = new System.Windows.Forms.Padding(4);
             this.rbSelection.Name = "rbSelection";
             this.rbSelection.Size = new System.Drawing.Size(115, 21);
             this.rbSelection.TabIndex = 7;
@@ -180,7 +180,7 @@ namespace Algorithms
             this.rbInsertion.AutoSize = true;
             this.rbInsertion.Checked = true;
             this.rbInsertion.Location = new System.Drawing.Point(9, 26);
-            this.rbInsertion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbInsertion.Margin = new System.Windows.Forms.Padding(4);
             this.rbInsertion.Name = "rbInsertion";
             this.rbInsertion.Size = new System.Drawing.Size(111, 21);
             this.rbInsertion.TabIndex = 6;
@@ -211,7 +211,7 @@ namespace Algorithms
             // 
             this.rbQuick.AutoSize = true;
             this.rbQuick.Location = new System.Drawing.Point(9, 112);
-            this.rbQuick.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbQuick.Margin = new System.Windows.Forms.Padding(4);
             this.rbQuick.Name = "rbQuick";
             this.rbQuick.Size = new System.Drawing.Size(89, 21);
             this.rbQuick.TabIndex = 9;
@@ -222,7 +222,7 @@ namespace Algorithms
             // 
             this.rbMerge.AutoSize = true;
             this.rbMerge.Location = new System.Drawing.Point(9, 84);
-            this.rbMerge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMerge.Margin = new System.Windows.Forms.Padding(4);
             this.rbMerge.Name = "rbMerge";
             this.rbMerge.Size = new System.Drawing.Size(97, 21);
             this.rbMerge.TabIndex = 8;
@@ -256,6 +256,7 @@ namespace Algorithms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(653, 459);
             this.Controls.Add(this.lblTitle);

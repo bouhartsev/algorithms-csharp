@@ -59,9 +59,8 @@ namespace Algorithms
             this.lblSplash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSplash.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblSplash.Location = new System.Drawing.Point(0, 30);
-            this.lblSplash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSplash.Name = "lblSplash";
-            this.lblSplash.Size = new System.Drawing.Size(532, 493);
+            this.lblSplash.Size = new System.Drawing.Size(709, 620);
             this.lblSplash.TabIndex = 10;
             this.lblSplash.Text = "CHOOSE THE TASK";
             this.lblSplash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,12 +73,12 @@ namespace Algorithms
             this.lblSourceCode,
             this.lblName,
             this.lblCopyright});
-            this.statusStrip.Location = new System.Drawing.Point(0, 523);
+            this.statusStrip.Location = new System.Drawing.Point(0, 650);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.statusStrip.ShowItemToolTips = true;
-            this.statusStrip.Size = new System.Drawing.Size(532, 26);
+            this.statusStrip.Size = new System.Drawing.Size(709, 26);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 8;
             this.statusStrip.Text = "Footer";
@@ -132,8 +131,8 @@ namespace Algorithms
             this.task8ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(532, 30);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(709, 30);
             this.menuStrip.TabIndex = 9;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -202,10 +201,10 @@ namespace Algorithms
             this.btnTaskExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnTaskExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaskExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTaskExit.Location = new System.Drawing.Point(9, 38);
-            this.btnTaskExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaskExit.Location = new System.Drawing.Point(12, 47);
+            this.btnTaskExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaskExit.Name = "btnTaskExit";
-            this.btnTaskExit.Size = new System.Drawing.Size(58, 22);
+            this.btnTaskExit.Size = new System.Drawing.Size(77, 27);
             this.btnTaskExit.TabIndex = 11;
             this.btnTaskExit.Text = "exit task";
             this.btnTaskExit.UseVisualStyleBackColor = false;
@@ -214,11 +213,10 @@ namespace Algorithms
             // 
             // lblRuntime
             // 
-            this.lblRuntime.Location = new System.Drawing.Point(0, 24);
-            this.lblRuntime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRuntime.Location = new System.Drawing.Point(0, 30);
             this.lblRuntime.Name = "lblRuntime";
-            this.lblRuntime.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.lblRuntime.Size = new System.Drawing.Size(54, 14);
+            this.lblRuntime.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblRuntime.Size = new System.Drawing.Size(72, 17);
             this.lblRuntime.TabIndex = 14;
             this.lblRuntime.Text = "0.0000";
             this.lblRuntime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -228,30 +226,29 @@ namespace Algorithms
             this.pnlRuntime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRuntime.Controls.Add(this.lblRuntimeTitle);
             this.pnlRuntime.Controls.Add(this.lblRuntime);
-            this.pnlRuntime.Location = new System.Drawing.Point(458, 29);
-            this.pnlRuntime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRuntime.Location = new System.Drawing.Point(611, 36);
+            this.pnlRuntime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRuntime.Name = "pnlRuntime";
-            this.pnlRuntime.Size = new System.Drawing.Size(55, 46);
+            this.pnlRuntime.Size = new System.Drawing.Size(73, 57);
             this.pnlRuntime.TabIndex = 16;
             this.pnlRuntime.Visible = false;
             // 
             // lblRuntimeTitle
             // 
-            this.lblRuntimeTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblRuntimeTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRuntimeTitle.Location = new System.Drawing.Point(0, 5);
             this.lblRuntimeTitle.Name = "lblRuntimeTitle";
-            this.lblRuntimeTitle.Size = new System.Drawing.Size(54, 19);
+            this.lblRuntimeTitle.Size = new System.Drawing.Size(72, 23);
             this.lblRuntimeTitle.TabIndex = 15;
             this.lblRuntimeTitle.Text = "Runtime:";
             this.lblRuntimeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AllTasks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnTaskExit;
-            this.ClientSize = new System.Drawing.Size(532, 549);
+            this.ClientSize = new System.Drawing.Size(709, 676);
             this.Controls.Add(this.pnlRuntime);
             this.Controls.Add(this.btnTaskExit);
             this.Controls.Add(this.lblSplash);
@@ -261,6 +258,7 @@ namespace Algorithms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AllTasks";
             this.Text = "Bouhartsev";
             this.Load += new System.EventHandler(this.AllTasks_Load);

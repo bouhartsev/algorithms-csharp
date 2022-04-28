@@ -16,6 +16,8 @@ namespace Algorithms
         public Task3()
         {
             InitializeComponent();
+
+            AllTasks.GetSelfAndChildrenRecursive(this).OfType<Button>().ToList().ForEach((b) => { if (b.Name!="btnRemove") b.Click += new EventHandler(this.pressBtns); });
         }
 
         private void cmsInput_Opening(object sender, CancelEventArgs e)
@@ -159,13 +161,7 @@ namespace Algorithms
         {
             char key_number = e.KeyChar;
 
-            // enter or =
-            if (key_number == 61 || key_number == 13)
-            {
-                calc();
-            }
-
-            // c - очистка поля
+            pressOut(key_number);
 
             if (!IsAllowedChar(key_number) && key_number != 8 && Control.ModifierKeys != Keys.Control) e.Handled = true;
         }
@@ -253,6 +249,10 @@ namespace Algorithms
                         if (operStack.Count > 0) //Если в стеке есть элементы
                             if (GetPriority(input[i]) <= GetPriority(operStack.Peek())) //И если приоритет нашего оператора меньше или равен приоритету оператора на вершине стека
                                 output += operStack.Pop().ToString() + " "; //То добавляем последний оператор из стека в строку с выражением
+                            
+                            // for negative
+                            else if (input[i] == '-' && GetPriority(operStack.Peek()) == 0) output += "0 ";
+                        else if (input[i] == '-' && i == 0) output += "0 ";
 
                         operStack.Push(char.Parse(input[i].ToString())); //Если стек пуст, или же приоритет оператора выше - добавляем операторов на вершину стека
 
@@ -359,15 +359,40 @@ namespace Algorithms
             if (!tbInput.Focused)
             {
                 char key_number = e.KeyChar;
+                pressOut(key_number);
+
+                e.Handled = true;
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            pressOut((char)8);
+        }
+
+        private void pressBtns(object sender, EventArgs e)
+        {
+            pressOut((sender as Button).Text[0]);
+        }
+
+        private void pressOut(char key_number)
+        {
+
+            if (!tbInput.Focused)
+            {
                 if (IsAllowedChar(key_number)) tbInput.Text += key_number.ToString();
                 else if (key_number == 8)
                     tbInput.Text = tbInput.Text.Remove(tbInput.Text.Length - 1, 1);
                 tbInput.SelectionStart = tbInput.Text.Length;
-                tbInput_KeyPress(sender, e);
                 tbInput.Focus();
-
-                e.Handled = true;
             }
+
+            // enter or =
+            if (key_number == 61 || key_number == 13) calc();
+
+            // c - очистка поля
+            if (key_number=='C' || key_number== 'c' || key_number == 'С' || key_number == 'с')
+                tbInput.Text = "";
         }
     }
 }
