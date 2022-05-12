@@ -193,9 +193,14 @@ namespace Algorithms
 
         private bool checkAndFix(ref string input)
         {
-            if (!Regex.IsMatch(input, @"^[-\d+*^\/()., ]+$")) return false;
+            input = input.Replace(" ", "");
             input = input.Replace('.', ',');
+            input = input.Replace('x', '*');
+            input = input.Replace('×', '*');
+            input = input.Replace('÷', '/');
+            input = input.Replace('−', '-');
             tbInput.Text = input;
+            if (!Regex.IsMatch(input, @"^[-\d+*^\/(),]+$")) return false;
             return true;
         }
 
@@ -246,19 +251,17 @@ namespace Algorithms
                     }
                     else //Если любой другой оператор
                     {
-                        if (operStack.Count > 0) //Если в стеке есть элементы
-                            if (GetPriority(input[i]) <= GetPriority(operStack.Peek())) //И если приоритет нашего оператора меньше или равен приоритету оператора на вершине стека
-                                output += operStack.Pop().ToString() + " "; //То добавляем последний оператор из стека в строку с выражением
-                            
-                            // for negative
-                            else if (input[i] == '-' && GetPriority(operStack.Peek()) == 0) output += "0 ";
-                        else if (input[i] == '-' && i == 0) output += "0 ";
+                        // пока стек не пуст и приоритет текущего оператора меньше или равен значению сверху - добавляем перемещаем оператор из стека в финальную строку
+                        while (operStack.Count > 0 && GetPriority(input[i]) <= GetPriority(operStack.Peek()))
+                            output += operStack.Pop() + " ";
 
+                        // for negative
+                        if (input[i] == '-' &&  (i>0 && input[i - 1] == '(' || i==0)) output += "0 ";
+                        
                         operStack.Push(char.Parse(input[i].ToString())); //Если стек пуст, или же приоритет оператора выше - добавляем операторов на вершину стека
 
                     }
                 }
-                lblAnswer.Text += output + "\n";
             }
 
             //Когда прошли по всем символам, выкидываем из стека все оставшиеся там операторы в строку
@@ -321,11 +324,11 @@ namespace Algorithms
                 case '(': return 0;
                 case ')': return 1;
                 case '+': return 2;
-                case '-': return 3;
-                case '*': return 4;
-                case '/': return 4;
-                case '^': return 5;
-                default: return 6;
+                case '-': return 2;
+                case '*': return 3;
+                case '/': return 3;
+                case '^': return 4;
+                default: return 5;
             }
         }
 
