@@ -43,7 +43,6 @@ namespace Algorithms
             this.cmsSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cmsItemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.lblAnswer = new System.Windows.Forms.Label();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.button0 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,6 +61,7 @@ namespace Algorithms
             this.btnPlus = new System.Windows.Forms.Button();
             this.btnPoint = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsInput.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -71,10 +71,9 @@ namespace Algorithms
             this.btnEqual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEqual.ForeColor = System.Drawing.Color.Black;
-            this.btnEqual.Location = new System.Drawing.Point(360, 32);
-            this.btnEqual.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEqual.Location = new System.Drawing.Point(270, 26);
             this.btnEqual.Name = "btnEqual";
-            this.btnEqual.Size = new System.Drawing.Size(139, 79);
+            this.btnEqual.Size = new System.Drawing.Size(104, 64);
             this.btnEqual.TabIndex = 1;
             this.btnEqual.Text = "=";
             this.btnEqual.UseVisualStyleBackColor = true;
@@ -84,11 +83,12 @@ namespace Algorithms
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTitle.Location = new System.Drawing.Point(13, 0);
+            this.lblTitle.Location = new System.Drawing.Point(10, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(729, 90);
+            this.lblTitle.Size = new System.Drawing.Size(546, 73);
             this.lblTitle.TabIndex = 12;
-            this.lblTitle.Text = "Arrays and binary search";
+            this.lblTitle.Text = "Calculator";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbInput
@@ -96,10 +96,9 @@ namespace Algorithms
             this.tbInput.ContextMenuStrip = this.cmsInput;
             this.tbInput.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbInput.Location = new System.Drawing.Point(13, 90);
-            this.tbInput.Margin = new System.Windows.Forms.Padding(4);
+            this.tbInput.Location = new System.Drawing.Point(10, 73);
             this.tbInput.Name = "tbInput";
-            this.tbInput.Size = new System.Drawing.Size(729, 41);
+            this.tbInput.Size = new System.Drawing.Size(546, 41);
             this.tbInput.TabIndex = 13;
             this.tbInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInput_KeyPress);
@@ -177,23 +176,21 @@ namespace Algorithms
             this.lblAnswer.AutoEllipsis = true;
             this.lblAnswer.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblAnswer.Location = new System.Drawing.Point(13, 131);
+            this.lblAnswer.Location = new System.Drawing.Point(10, 114);
             this.lblAnswer.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(729, 44);
+            this.lblAnswer.Size = new System.Drawing.Size(546, 36);
             this.lblAnswer.TabIndex = 14;
             this.lblAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip.SetToolTip(this.lblAnswer, "Double click for copy");
             // 
             // button0
             // 
             this.button0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button0.ForeColor = System.Drawing.Color.Black;
-            this.button0.Location = new System.Drawing.Point(29, 138);
-            this.button0.Margin = new System.Windows.Forms.Padding(4);
+            this.button0.Location = new System.Drawing.Point(22, 112);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(139, 79);
+            this.button0.Size = new System.Drawing.Size(104, 64);
             this.button0.TabIndex = 16;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
@@ -203,10 +200,9 @@ namespace Algorithms
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(195, 138);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(146, 112);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 79);
+            this.button1.Size = new System.Drawing.Size(104, 64);
             this.button1.TabIndex = 17;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
@@ -216,10 +212,9 @@ namespace Algorithms
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(29, 244);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(22, 198);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 79);
+            this.button2.Size = new System.Drawing.Size(104, 64);
             this.button2.TabIndex = 18;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
@@ -229,10 +224,9 @@ namespace Algorithms
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(195, 244);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(146, 198);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 79);
+            this.button3.Size = new System.Drawing.Size(104, 64);
             this.button3.TabIndex = 19;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
@@ -242,10 +236,9 @@ namespace Algorithms
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(29, 350);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(22, 284);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 79);
+            this.button4.Size = new System.Drawing.Size(104, 64);
             this.button4.TabIndex = 20;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
@@ -255,10 +248,9 @@ namespace Algorithms
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(195, 350);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(146, 284);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(139, 79);
+            this.button5.Size = new System.Drawing.Size(104, 64);
             this.button5.TabIndex = 21;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
@@ -268,10 +260,9 @@ namespace Algorithms
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(29, 455);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(22, 370);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(139, 79);
+            this.button6.Size = new System.Drawing.Size(104, 64);
             this.button6.TabIndex = 22;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
@@ -281,10 +272,9 @@ namespace Algorithms
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(195, 455);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(146, 370);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(139, 79);
+            this.button7.Size = new System.Drawing.Size(104, 64);
             this.button7.TabIndex = 23;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
@@ -294,10 +284,9 @@ namespace Algorithms
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(29, 561);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Location = new System.Drawing.Point(22, 456);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(139, 79);
+            this.button8.Size = new System.Drawing.Size(104, 64);
             this.button8.TabIndex = 24;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
@@ -307,10 +296,9 @@ namespace Algorithms
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(195, 561);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Location = new System.Drawing.Point(146, 456);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(139, 79);
+            this.button9.Size = new System.Drawing.Size(104, 64);
             this.button9.TabIndex = 25;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
@@ -320,10 +308,9 @@ namespace Algorithms
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(29, 32);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(22, 26);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(139, 79);
+            this.btnClear.Size = new System.Drawing.Size(104, 64);
             this.btnClear.TabIndex = 26;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -333,10 +320,9 @@ namespace Algorithms
             this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRemove.ForeColor = System.Drawing.Color.Black;
-            this.btnRemove.Location = new System.Drawing.Point(195, 32);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemove.Location = new System.Drawing.Point(146, 26);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(139, 79);
+            this.btnRemove.Size = new System.Drawing.Size(104, 64);
             this.btnRemove.TabIndex = 27;
             this.btnRemove.Text = "⌫";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -347,10 +333,9 @@ namespace Algorithms
             this.btnDiv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDiv.ForeColor = System.Drawing.Color.Black;
-            this.btnDiv.Location = new System.Drawing.Point(360, 138);
-            this.btnDiv.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDiv.Location = new System.Drawing.Point(270, 112);
             this.btnDiv.Name = "btnDiv";
-            this.btnDiv.Size = new System.Drawing.Size(139, 79);
+            this.btnDiv.Size = new System.Drawing.Size(104, 64);
             this.btnDiv.TabIndex = 28;
             this.btnDiv.Text = "/";
             this.btnDiv.UseVisualStyleBackColor = true;
@@ -360,10 +345,9 @@ namespace Algorithms
             this.btnTimes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnTimes.ForeColor = System.Drawing.Color.Black;
-            this.btnTimes.Location = new System.Drawing.Point(360, 244);
-            this.btnTimes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimes.Location = new System.Drawing.Point(270, 198);
             this.btnTimes.Name = "btnTimes";
-            this.btnTimes.Size = new System.Drawing.Size(139, 79);
+            this.btnTimes.Size = new System.Drawing.Size(104, 64);
             this.btnTimes.TabIndex = 29;
             this.btnTimes.Text = "*";
             this.btnTimes.UseVisualStyleBackColor = true;
@@ -373,10 +357,9 @@ namespace Algorithms
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMinus.ForeColor = System.Drawing.Color.Black;
-            this.btnMinus.Location = new System.Drawing.Point(360, 350);
-            this.btnMinus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinus.Location = new System.Drawing.Point(270, 284);
             this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(139, 79);
+            this.btnMinus.Size = new System.Drawing.Size(104, 64);
             this.btnMinus.TabIndex = 30;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
@@ -386,10 +369,9 @@ namespace Algorithms
             this.btnPlus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnPlus.ForeColor = System.Drawing.Color.Black;
-            this.btnPlus.Location = new System.Drawing.Point(360, 455);
-            this.btnPlus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPlus.Location = new System.Drawing.Point(270, 370);
             this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(139, 79);
+            this.btnPlus.Size = new System.Drawing.Size(104, 64);
             this.btnPlus.TabIndex = 31;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
@@ -399,10 +381,9 @@ namespace Algorithms
             this.btnPoint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnPoint.ForeColor = System.Drawing.Color.Black;
-            this.btnPoint.Location = new System.Drawing.Point(360, 561);
-            this.btnPoint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPoint.Location = new System.Drawing.Point(270, 456);
             this.btnPoint.Name = "btnPoint";
-            this.btnPoint.Size = new System.Drawing.Size(139, 79);
+            this.btnPoint.Size = new System.Drawing.Size(104, 64);
             this.btnPoint.TabIndex = 32;
             this.btnPoint.Text = ",";
             this.btnPoint.UseVisualStyleBackColor = true;
@@ -428,28 +409,32 @@ namespace Algorithms
             this.panel.Controls.Add(this.button7);
             this.panel.Controls.Add(this.button9);
             this.panel.Controls.Add(this.button8);
-            this.panel.Location = new System.Drawing.Point(113, 164);
-            this.panel.Margin = new System.Windows.Forms.Padding(4);
+            this.panel.Location = new System.Drawing.Point(85, 133);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(529, 674);
+            this.panel.Size = new System.Drawing.Size(397, 548);
             this.panel.TabIndex = 33;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Task3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(755, 863);
+            this.ClientSize = new System.Drawing.Size(566, 701);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Task3";
-            this.Padding = new System.Windows.Forms.Padding(13, 0, 13, 6);
+            this.Padding = new System.Windows.Forms.Padding(10, 0, 10, 5);
             this.Text = "Task3";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Task3_KeyPress);
             this.cmsInput.ResumeLayout(false);
@@ -473,7 +458,6 @@ namespace Algorithms
         private System.Windows.Forms.ToolStripMenuItem cmsItemDelete;
         private System.Windows.Forms.ToolStripSeparator cmsSeparator2;
         private System.Windows.Forms.ToolStripMenuItem cmsItemSelectAll;
-        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -492,5 +476,6 @@ namespace Algorithms
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Button btnPoint;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
