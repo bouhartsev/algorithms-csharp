@@ -58,7 +58,7 @@ namespace Algorithms
                 a = digits[str[i]];
                 b = (i < str.Length - 1) ? digits[str[i + 1]] : 0;
                 c = (i < str.Length - 2) ? digits[str[i + 2]] : 0;
-                if (b != 0 && (b != a && !numbers.ContainsKey("" + str[i] + str[i + 1]) || a == b && numbers.ContainsValue(a * 2) || c != 0 && a <= b && b < c))
+                if (b != 0 && (b > a && !numbers.ContainsKey("" + str[i] + str[i + 1]) || a == b && numbers.ContainsValue(a * 2) || c != 0 && a <= b && b < c))
                     throw new Exception("Incorrect Roman number format");
                 r += (b > a) ? -a : a;
             }

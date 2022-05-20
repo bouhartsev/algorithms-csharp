@@ -59,7 +59,6 @@ namespace Algorithms
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(336, 46);
             this.tbInput.TabIndex = 35;
-            this.tbInput.Text = "IVM123";
             this.tbInput.TextChanged += new System.EventHandler(this.tbInput_TextChanged);
             this.tbInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInput_KeyPress);
             // 
